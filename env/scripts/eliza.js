@@ -1,216 +1,278 @@
 var model = {
-    ".*hello .*": [
-        "How do you do. Please state your problem."
-        ],
-    "(.*)? computer(.*)?": [
-        "Do computers worry you?",
-        "What do you think about machines?",
-        "Why do you mention computers?",
-        "What do you think machines have to do with your problem?",
-        ],
-    "(.*)? name(.*)?": [
-        "I am not interested in names",
-        ],
-    "(.*)?sorry(.*)?": [
-        "Please don't apologize",
-        "Apologies are not necessary",
-        "What feelings do you have when you apologize",
-        ],
-    "(.*)?I remember (.*)?": [
-        "Do you often think of $2?",
-        "Does thinking of $2 bring anything else to mind?",
-        "What else do you remember?",
-        "Why do you recall $2 right now?",
-        "What in the present situation reminds you of $2?",
-        "What is the connection between me and $2?",
-        ],
-    "(.*)?do you remember (.*)?": [
-        "Did you think I would forget $2?",
-        "Why do you think I should recall $2 now?",
-        "What about $2?",
-        "You mentioned $2",
-        ],
-    "(.*)?I want (.*)?": [
-        "What would it mean if you got $2?",
-        "Why do you want $2?",
-        "Suppose you got $2 soon."
-        ],
-    "(.*)?if (.*)?": [
-        "Do you really think it's likely that $2?",
-        "Do you wish that $2?",
-        "What do you think about $2?",
-        "Really--if $2?"
-        ],
-    "(.*)?I dreamt (.*)?": [
-        "How do you feel about $2 in reality?",
-        ],
-    "(.*)? dream (.*)?": [
-        "What does this dream suggest to you?",
-        "Do you dream often?",
-        "What persons appear in your dreams?",
-        "Don't you believe that dream has to do with your problem?",
-        ],
-    "(.*)?my mother (.*)?": [
-        "Who else in your family $2?",
-        "Tell me more about your family",
-        ],
-    "(.*)?my father (.*)?": [
-        "Your father?",
-        "Does he influence you strongly?",
-        "What else comes to mind when you think of your father?",
-        ],
-    "(.*)?I am glad(.*)?": [
-        "How have I helped you to be $2?",
-        "What makes you happy just now?",
-        "Can you explain why you are suddenly $2?",
-        ],
-    "(.*)?I am sad(.*)?": [
-        "I am sorry to hear you are depressed",
-        "I'm sure it's not pleasant to be sad",
-        ],
-    "(.*)? are like (.*)?": [
-        "What resemblence do you see between $1 and $2?",
-        ],
-    "(.*)? is like (.*)?": [
-        "In what way is it that $1 is like $2?",
-        "What resemblence do you see?",
-        "Could there really be some connection?",
-        "How?",
-        ],
-    "(.*)? alike (.*)?": [
-        "In what way?",
-        "What similarities are there?",
-        ],
-    "(.*)? same (.*)?": [
-        "What other connections do you see?",
-        ],
-    "(.*)?no(.*)?": [
-        "Why not?",
-        "You are being a bit negative.",
-        "Are you saying 'No' just to be negative?"
-        ],
-    "(.*)?I was (.*)?": [
-        "Were you really?",
-        "Perhaps I already knew you were $2.",
-        "Why do you tell me you were $2 now?"
-        ],
-    "(.*)? was I (.*)?": [
-        "What if you were $2?",
-        "Do you think you were $2?",
-        "What would it mean if you were $2?",
-        ],
-    "(.*)?I am (.*)?": [
-        "In what way are you $2?",
-        "Do you want to be $2?",
-        ],
-    "(.*)?am I (.*)?": [
-        "Do you believe you are $2?",
-        "Would you want to be $2?",
-        "You wish I would tell you you are $2?",
-        "What would it mean if you were $2?",
-        ],
-    "(.*)? am (.*)?": [
-        "Why do you say 'AM?'",
-        "I don't understand that"
-        ],
-    "(.*)?are you (.*)?": [
-        "Why are you interested in whether I am $2 or not?",
-        "Would you prefer if I weren't $2?",
-        "Perhaps I am $2 in your fantasies",
-        ],
-    "(.*)?you are (.*)?": [
-        "What makes you think I am $2?",
-        ],
-    "(.*)?because (.*)?": [
-        "Is that the real reason?",
-        "What other reasons might there be?",
-        "Does that reason seem to explain anything else?",
-        ],
-    "(.*)?were you (.*)?": [
-        "Perhaps I was $2?",
-        "What do you think?",
-        "What if I had been $2?",
-        ],
-    "(.*)?I can't (.*)?": [
-        "Maybe you could $2 now",
-        "What if you could $2?",
-        ],
-    "(.*)?I feel (.*)?": [
-        "Do you often feel $2?"
-        ],
-    "(.*)?I felt (.*)?": [
-        "What other feelings do you have?"
-        ],
-    "(.*)?I (.*)? you (.*)?z": [
-        "Perhaps in your fantasy we $2 each other",
-        ],
-    "(.*)?why don't you (.*)?": [
-        "Should you $2 yourself?",
-        "Do you believe I don't $2?",
-        "Perhaps I will $2 in good time",
-        ],
-    "(.*)?yes(.*)?": [
-        "You seem quite positive",
-        "You are sure?",
-        "I understand",
-        ],
-    "(.*)? someone (.*)?": [
-        "Can you be more specific?",
-        ],
-    "(.*)? everyone (.*)?": [
-        "Surely not everyone",
-        "Can you think of anyone in particular?",
-        "Who, for example?",
-        "You are thinking of a special person",
-        ],
-    "(.*)? always (.*)?": [
-        "Can you think of a specific example?",
-        "When?",
-        "What incident are you thinking of?",
-        "Really--always?",
-        ],
-    "(.*)?what (.*)?": [
-        "Why do you ask?",
-        "Does that question interest you?",
-        "What is it you really want to know?",
-        "What do you think?",
-        "What comes to your mind when you ask that?",
-        ],
-    "(.*)?perhaps (.*)?": [
-        "You do not seem quite certain",
-        ],
-    "(.*)?are (.*)?": [
-        "Did you think they might not be $2?",
-        "Possibly they are $2",
-        ]
+  ".*HELLO .*": [
+    "HOW DO YOU DO. PLEASE STATE YOUR PROBLEM."
+  ],
+  "(.*)? COMPUTER(.*)?": [
+    "DO COMPUTERS WORRY YOU?",
+    "WHAT DO YOU THINK ABOUT MACHINES?",
+    "WHY DO YOU MENTION COMPUTERS?",
+    "WHAT DO YOU THINK MACHINES HAVE TO DO WITH YOUR PROBLEM?",
+  ],
+  "(.*)? NAME(.*)?": [
+    "I AM NOT INTERESTED IN NAMES",
+  ],
+  "(.*)?SORRY(.*)?": [
+    "PLEASE DON'T APOLOGIZE",
+    "APOLOGIES ARE NOT NECESSARY",
+    "WHAT FEELINGS DO YOU HAVE WHEN YOU APOLOGIZE",
+  ],
+  "(.*)?I REMEMBER (.*)?": [
+    "DO YOU OFTEN THINK OF $2?",
+    "DOES THINKING OF $2 BRING ANYTHING ELSE TO MIND?",
+    "WHAT ELSE DO YOU REMEMBER?",
+    "WHY DO YOU RECALL $2 RIGHT NOW?",
+    "WHAT IN THE PRESENT SITUATION REMINDS YOU OF $2?",
+    "WHAT IS THE CONNECTION BETWEEN ME AND $2?",
+  ],
+  "(.*)?DO YOU REMEMBER (.*)?": [
+    "DID YOU THINK I WOULD FORGET $2?",
+    "WHY DO YOU THINK I SHOULD RECALL $2 NOW?",
+    "WHAT ABOUT $2?",
+    "YOU MENTIONED $2",
+  ],
+  "(.*)?I WANT (.*)?": [
+    "WHAT WOULD IT MEAN IF YOU GOT $2?",
+    "WHY DO YOU WANT $2?",
+    "SUPPOSE YOU GOT $2 SOON."
+  ],
+  "(.*)?IF (.*)?": [
+    "DO YOU REALLY THINK IT'S LIKELY THAT $2?",
+    "DO YOU WISH THAT $2?",
+    "WHAT DO YOU THINK ABOUT $2?",
+    "REALLY--IF $2?"
+  ],
+  "(.*)?I DREAMT (.*)?": [
+    "HOW DO YOU FEEL ABOUT $2 IN REALITY?",
+  ],
+  "(.*)? DREAM (.*)?": [
+    "WHAT DOES THIS DREAM SUGGEST TO YOU?",
+    "DO YOU DREAM OFTEN?",
+    "WHAT PERSONS APPEAR IN YOUR DREAMS?",
+    "DON'T YOU BELIEVE THAT DREAM HAS TO DO WITH YOUR PROBLEM?",
+  ],
+  "(.*)?MY MOTHER (.*)?": [
+    "WHO ELSE IN YOUR FAMILY $2?",
+    "TELL ME MORE ABOUT YOUR FAMILY",
+  ],
+  "(.*)?MY FATHER (.*)?": [
+    "YOUR FATHER?",
+    "DOES HE INFLUENCE YOU STRONGLY?",
+    "WHAT ELSE COMES TO MIND WHEN YOU THINK OF YOUR FATHER?",
+  ],
+  "(.*)?I AM GLAD(.*)?": [
+    "HOW HAVE I HELPED YOU TO BE $2?",
+    "WHAT MAKES YOU HAPPY JUST NOW?",
+    "CAN YOU EXPLAIN WHY YOU ARE SUDDENLY $2?",
+  ],
+  "(.*)?I AM SAD(.*)?": [
+    "I AM SORRY TO HEAR YOU ARE DEPRESSED",
+    "I'M SURE IT'S NOT PLEASANT TO BE SAD",
+  ],
+  "(.*)? ARE LIKE (.*)?": [
+    "WHAT RESEMBLENCE DO YOU SEE BETWEEN $1 AND $2?",
+  ],
+  "(.*)? IS LIKE (.*)?": [
+    "IN WHAT WAY IS IT THAT $1 IS LIKE $2?",
+    "WHAT RESEMBLENCE DO YOU SEE?",
+    "COULD THERE REALLY BE SOME CONNECTION?",
+    "HOW?",
+  ],
+  "(.*)? ALIKE (.*)?": [
+    "IN WHAT WAY?",
+    "WHAT SIMILARITIES ARE THERE?",
+  ],
+  "(.*)? SAME (.*)?": [
+    "WHAT OTHER CONNECTIONS DO YOU SEE?",
+  ],
+  "(.*)?NO(.*)?": [
+    "WHY NOT?",
+    "YOU ARE BEING A BIT NEGATIVE.",
+    "ARE YOU SAYING 'NO' JUST TO BE NEGATIVE?"
+  ],
+  "(.*)?I WAS (.*)?": [
+    "WERE YOU REALLY?",
+    "PERHAPS I ALREADY KNEW YOU WERE $2.",
+    "WHY DO YOU TELL ME YOU WERE $2 NOW?"
+  ],
+  "(.*)? WAS I (.*)?": [
+    "WHAT IF YOU WERE $2?",
+    "DO YOU THINK YOU WERE $2?",
+    "WHAT WOULD IT MEAN IF YOU WERE $2?",
+  ],
+  "(.*)?I AM (.*)?": [
+    "IN WHAT WAY ARE YOU $2?",
+    "DO YOU WANT TO BE $2?",
+  ],
+  "(.*)?AM I (.*)?": [
+    "DO YOU BELIEVE YOU ARE $2?",
+    "WOULD YOU WANT TO BE $2?",
+    "YOU WISH I WOULD TELL YOU YOU ARE $2?",
+    "WHAT WOULD IT MEAN IF YOU WERE $2?",
+  ],
+  "(.*)? AM (.*)?": [
+    "WHY DO YOU SAY 'AM?'",
+    "I DON'T UNDERSTAND THAT"
+  ],
+  "(.*)?ARE YOU (.*)?": [
+    "WHY ARE YOU INTERESTED IN WHETHER I AM $2 OR NOT?",
+    "WOULD YOU PREFER IF I WEREN'T $2?",
+    "PERHAPS I AM $2 IN YOUR FANTASIES",
+  ],
+  "(.*)?YOU ARE (.*)?": [
+    "WHAT MAKES YOU THINK I AM $2?",
+  ],
+  "(.*)?BECAUSE (.*)?": [
+    "IS THAT THE REAL REASON?",
+    "WHAT OTHER REASONS MIGHT THERE BE?",
+    "DOES THAT REASON SEEM TO EXPLAIN ANYTHING ELSE?",
+  ],
+  "(.*)?WERE YOU (.*)?": [
+    "PERHAPS I WAS $2?",
+    "WHAT DO YOU THINK?",
+    "WHAT IF I HAD BEEN $2?",
+  ],
+  "(.*)?I CAN'T (.*)?": [
+    "MAYBE YOU COULD $2 NOW",
+    "WHAT IF YOU COULD $2?",
+  ],
+  "(.*)?I FEEL (.*)?": [
+    "DO YOU OFTEN FEEL $2?"
+  ],
+  "(.*)?I FELT (.*)?": [
+    "WHAT OTHER FEELINGS DO YOU HAVE?"
+  ],
+  "(.*)?I (.*)? YOU (.*)?Z": [
+    "PERHAPS IN YOUR FANTASY WE $2 EACH OTHER",
+  ],
+  "(.*)?WHY DON'T YOU (.*)?": [
+    "SHOULD YOU $2 YOURSELF?",
+    "DO YOU BELIEVE I DON'T $2?",
+    "PERHAPS I WILL $2 IN GOOD TIME",
+  ],
+  "(.*)?YES(.*)?": [
+    "YOU SEEM QUITE POSITIVE",
+    "YOU ARE SURE?",
+    "I UNDERSTAND",
+  ],
+  "(.*)? SOMEONE (.*)?": [
+    "CAN YOU BE MORE SPECIFIC?",
+  ],
+  "(.*)? EVERYONE (.*)?": [
+    "SURELY NOT EVERYONE",
+    "CAN YOU THINK OF ANYONE IN PARTICULAR?",
+    "WHO, FOR EXAMPLE?",
+    "YOU ARE THINKING OF A SPECIAL PERSON",
+  ],
+  "(.*)? ALWAYS (.*)?": [
+    "CAN YOU THINK OF A SPECIFIC EXAMPLE?",
+    "WHEN?",
+    "WHAT INCIDENT ARE YOU THINKING OF?",
+    "REALLY--ALWAYS?",
+  ],
+  "(.*)?WHAT (.*)?": [
+    "WHY DO YOU ASK?",
+    "DOES THAT QUESTION INTEREST YOU?",
+    "WHAT IS IT YOU REALLY WANT TO KNOW?",
+    "WHAT DO YOU THINK?",
+    "WHAT COMES TO YOUR MIND WHEN YOU ASK THAT?",
+  ],
+  "(.*)?PERHAPS (.*)?": [
+    "YOU DO NOT SEEM QUITE CERTAIN",
+  ],
+  "(.*)?ARE (.*)?": [
+    "DID YOU THINK THEY MIGHT NOT BE $2?",
+    "POSSIBLY THEY ARE $2",
+  ]
 }
 
 var default_model = [
-    "Very interesting",
-    "I am not sure I understand you fully",
-    "What does that suggest to you?",
-    "Please continue",
-    "Go on",
-    "Do you feel strongly about discussing such things?",
-    ]
+  "VERY INTERESTING",
+  "I AM NOT SURE I UNDERSTAND YOU FULLY",
+  "WHAT DOES THAT SUGGEST TO YOU?",
+  "PLEASE CONTINUE",
+  "GO ON",
+  "DO YOU FEEL STRONGLY ABOUT DISCUSSING SUCH THINGS?",
+]
 
-function getStructure(input){
-    for (var key in model) {
-        var re = RegExp(key)
-        if(re.test(input)){
-            return key
-        }
+var transpositionTable = {
+  "YOU ARE ": "I AM ",
+  "ARE ": "AM ",
+  "AM ": "ARE ",
+  "WERE ": "WAS ",
+  "WAS ": "WERE ",
+  "ME ": "YOU ",
+  "YOU ": "ME ",
+  "YOUR ": "MY ",
+  "MY ": "YOUR ",
+  "I'VE ": "YOU'VE ",
+  "YOU'VE ": "I'VE ",
+  "I'M ": "YOU'RE ",
+  "YOU'RE ": "I'M ",
+  "YOU ": "I ",
+  "I ": "YOU ",
+  "AREN'T ": "AM NOT ",
+  "WEREN'T ": "WASN'T ",
+  "WASN'T ": "WEREN'T ",
+  "I'D ": "YOU'D ",
+  "YOU'D ": "I'D ",
+  "DAD ": "FATHER ",
+  "MOM ": "MOTHER ",
+  "DREAMS ": "DREAM ",
+  "MYSELF ": "YOURSELF "
+}
+
+function getStructure(input) {
+  for (var key in model) {
+    var re = RegExp(key)
+    if (re.test(input)) {
+      return {
+        key: key,
+        matches: re.exec(input)
+      }
     }
-    return ""
+  }
+  return ""
+}
+
+function transition(matches) {
+  for (var match in matches) {
+    if (typeof matches[match] === 'string') {
+      var lastT = ""
+      for (var t in transpositionTable) {
+        if (matches[match].indexOf(t) !== -1) {
+          if (t !== lastT) {
+            lastT = transpositionTable[t]
+            while (matches[match].indexOf(t) !== -1) {
+            	console.log(t)
+            	matches[match] = matches[match].replace(t, transpositionTable[t])
+            }
+          }
+        }
+      }
+    }
+  }
+  console.log(matches)
+  return matches
 }
 
 function getReply(input) {
-  var key = getStructure(input)
-  if (key !== "") {
-    return model[key][Math.floor(Math.random() * model[key].length)]
+	input = input.toUpperCase()
+  input = input.replace(/(~|`|!|@|#|$|%|^|&|\*|\(|\)|{|}|\[|\]|;|:|\"|'|<|,|\.|>|\?|\/|\\|\||-|_|\+|=)/g,"")
+  input += " "
+  var structure = getStructure(input)
+  console.log(structure)
+  var response = ""
+  if (structure.key !== undefined) {
+    response = model[structure.key][Math.floor(Math.random() * model[structure.key].length)]
+    structure.matches = transition(structure.matches)
+    response = response.replace("$1", structure.matches[1].trim())
+    response = response.replace("$2", structure.matches[2].trim())
+
   } else {
-    return default_model[Math.floor(Math.random() * default_model.length)]
+    response = default_model[Math.floor(Math.random() * default_model.length)]
   }
+
+  return response
 }
 
 function init() {

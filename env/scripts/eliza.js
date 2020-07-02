@@ -243,7 +243,6 @@ function transition(matches) {
           if (t !== lastT) {
             lastT = transpositionTable[t]
             while (matches[match].indexOf(t) !== -1) {
-            	console.log(t)
             	matches[match] = matches[match].replace(t, transpositionTable[t])
             }
           }
@@ -251,7 +250,6 @@ function transition(matches) {
       }
     }
   }
-  console.log(matches)
   return matches
 }
 
@@ -260,7 +258,6 @@ function getReply(input) {
   input = input.replace(/(~|`|!|@|#|$|%|^|&|\*|\(|\)|{|}|\[|\]|;|:|\"|'|<|,|\.|>|\?|\/|\\|\||-|_|\+|=)/g,"")
   input += " "
   var structure = getStructure(input)
-  console.log(structure)
   var response = ""
   if (structure.key !== undefined) {
     response = model[structure.key][Math.floor(Math.random() * model[structure.key].length)]
@@ -282,10 +279,14 @@ function init() {
 function main() {
   var key = redis.Blpop(1,"ChatRequests")
   if (key.length > 0) {
-    console.log(key)
+    console.log("Chat key:" + key)
     var id = key.split(":")[1]
-    var message = redis.Do("get",key).String()[0]
-    redis.Do("set","ChatMessageResponse:"+id, "Response: " + getReply(message))
+    console.log("ID ", id)
+    var message = redis.Do("get",key)
+    var response = getReply(message)
+    console.log("Message: " + message)
+    console.log("Response: " + response)
+    redis.Do("set","ChatMessageResponse:"+id, "Response: " + response)
   } else {
     console.log("Nothing")
   }

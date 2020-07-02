@@ -1,13 +1,15 @@
+<?
 redis.Do("incr","ChatKey")
-var id =  redis.Do("get","ChatKey").String()[0]
+var id =  redis.Do("get","ChatKey")
 var key = "ChatMessageRequest:"+id
 
 redis.Do("set",key,request.Body)
 redis.Do("lpush","ChatRequests", key)
 
-var resp = ""
-while (resp === "") {
-  resp = redis.Do("get","ChatMessageResponse:"+id).String()[0]
+var resp = undefined
+while (resp === undefined) {
+  resp = redis.Do("get","ChatMessageResponse:"+id)
 }
 
 response.Write(resp)
+?>

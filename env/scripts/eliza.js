@@ -185,15 +185,6 @@ var model = {
   ]
 }
 
-var default_model = [
-  "VERY INTERESTING",
-  "I AM NOT SURE I UNDERSTAND YOU FULLY",
-  "WHAT DOES THAT SUGGEST TO YOU?",
-  "PLEASE CONTINUE",
-  "GO ON",
-  "DO YOU FEEL STRONGLY ABOUT DISCUSSING SUCH THINGS?",
-]
-
 var transpositionTable = {
   "YOU ARE ": "I AM ",
   "ARE ": "AM ",
@@ -253,7 +244,7 @@ function transition(matches) {
   return matches
 }
 
-function getReply(input) {
+function getReply(input, id) {
 	input = input.toUpperCase()
   input = input.replace(/(~|`|!|@|#|$|%|^|&|\*|\(|\)|{|}|\[|\]|;|:|\"|'|<|,|\.|>|\?|\/|\\|\||-|_|\+|=)/g,"")
   input += " "
@@ -266,27 +257,32 @@ function getReply(input) {
     response = response.replace("$2", structure.matches[2].trim())
 
   } else {
-    response = default_model[Math.floor(Math.random() * default_model.length)]
+    var key = "DefaultResponseRequests:"+id
+
+    redis.Do("set",key,input)
+    redis.Do("lpush","DefaultResponseRequests", key)
+    response = ""
   }
 
   return response
 }
 
-function init() {
-  console.log("Eliza online")
-}
+console.log("Eliza online")
 
 function main() {
   var key = redis.Blpop(1,"ChatRequests")
-  if (key.length > 0) {
+  if (key != undefined && key.length > 0) {
     console.log("Chat key:" + key)
     var id = key.split(":")[1]
     console.log("ID ", id)
     var message = redis.Do("get",key)
-    var response = getReply(message)
+    var response = getReply(message,id)
     console.log("Message: " + message)
     console.log("Response: " + response)
-    redis.Do("set","ChatMessageResponse:"+id, "Response: " + response)
+    if (response !== "") {
+      redis.Do("set","ChatMessageResponse:"+id, "Response: " + response)
+    }
+    
   } else {
     console.log("Nothing")
   }
